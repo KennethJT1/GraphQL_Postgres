@@ -1,7 +1,8 @@
-import { client } from "../database/db.js";
+import { getUsers } from "../utils";
+
 
 export const resolvers = {
   Query: {
-    users: () => client,
+    users: async() => getUsers(),
   },
 };

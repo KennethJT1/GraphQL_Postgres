@@ -38,9 +38,31 @@ export const ListTables = async()=> {
     
 };
 
-export const addUser = async () => {
-    const query = `
+export const addUser = async (id: number, name: string, email: string, password: string) => {
+    const query = {
     text: 'INSERT INTO users(id, name, email, password) VALUES($1, $2, $3, $4)',
-    value: [id, name, email, password],
-    `
+    values: [id, name, email, password],
 }
+
+try {
+    const res = await client.query(query);
+    console.log(res.rows);
+} catch (error) {
+    console.error(error);
+}finally{
+    client.end();
+}
+}
+
+export const getUsers = async()=> {
+    const query = `
+    SELECT * FROM users;
+    `
+
+    try {
+        const res = await client.query(query);
+        return res.rows;
+    } catch (error) {
+        console.error(error);
+    } 
+};
