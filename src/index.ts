@@ -1,4 +1,4 @@
-// https://www.youtube.com/watch?v=YudkjAsZJk0&list=PLASldBPN_pkAj8b0Ny5IGoYgsnqylP2c-&index=3
+// https://www.youtube.com/watch?v=gt2Z6zAGtc8&list=PLASldBPN_pkAj8b0Ny5IGoYgsnqylP2c-&index=4
 const { ApolloServer, gql } = require('apollo-server') ;
 
 import { typeDefs } from './graphql/schema'
@@ -23,4 +23,4 @@ const server = new ApolloServer({
   typeDefs, resolvers
 })
 
-server.listen(4000, ()=> console.log(`Server is running at http://localhost:4000`))   
+server.listen(4400, ()=> console.log(`Server is running at http://localhost:4400`))   
